@@ -1,5 +1,5 @@
 {
-  "name": "travis-ci-demo",
+  "name": "ng-travis",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
