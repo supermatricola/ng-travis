@@ -17,9 +17,10 @@ addons:
 install:
   - rm -rf dist/*
   - npm install
-  - npm install -g typescript 
   - npm install --save -g @angular/cli @angular-devkit/build-angular @angular/compiler @angular/compiler-cli --silent
 
 script:
+  - ng build
+  - ng e2e
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 
