@@ -7,6 +7,13 @@ branches:
   only:
     - master
 
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
 install:
   - rm -rf dist/*
   - npm install
@@ -14,5 +21,5 @@ install:
   - npm install --save -g @angular/cli @angular-devkit/build-angular @angular/compiler @angular/compiler-cli --silent
 
 script:
-  - npm run test
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 
