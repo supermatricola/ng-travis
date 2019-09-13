@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+  - 8.12.0
+
+branches:
+  only:
+    - master # will only build for master branch commits
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+cache:
+  directories:
+    - ./node_modules
+
+install:
+  - rm -rf dist/*
+
+script:
+  - ng build --prod
+  - ng e2e
+  - ng test 
+
+after_success:
+  - echo "OK!"
