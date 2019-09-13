@@ -1,44 +1,18 @@
 language: node_js
+
 node_js:
-  - 8.12.0
+  - 10.15.3
 
 branches:
   only:
-    - master # will only build for master branch commits
+    - master
 
 install:
   - rm -rf dist/*
-  dist: trusty
-sudo: false
-
-language: node_js
-node_js:
-  - 9
-
-branches:
-  only:
-    - master # will only build for master branch commits
-
-install:
-  - rm -rf dist/*
+  - npm install
+  - npm install -g typescript 
+  - npm install --save -g @angular/cli @angular-devkit/build-angular @angular/compiler @angular/compiler-cli --silent
 
 script:
-  - npm install -g --silent @angular/cli
-  - ng build --prod
-  - ng e2e
-  - ng test 
+  - npm run test
 
-after_success:
-  - echo "OK!"
-
-
-before_script:
-  x
-
-script:
-  - ng build --prod
-  - ng e2e
-  - ng test 
-
-after_success:
-  - echo "OK!"
