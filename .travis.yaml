@@ -20,7 +20,6 @@ install:
   - npm install --save -g @angular/cli @angular-devkit/build-angular @angular/compiler @angular/compiler-cli --silent
 
 script:
-  - ng build
-  - ng e2e
+  - ng build --prod
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 
