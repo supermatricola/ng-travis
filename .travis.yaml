@@ -15,7 +15,6 @@ addons:
       - google-chrome-stable
 
 install:
-  - rm -rf dist/*
   - npm install
   - npm install --save -g @angular/cli @angular-devkit/build-angular @angular/compiler @angular/compiler-cli --silent
 
