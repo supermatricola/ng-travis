@@ -7,18 +7,12 @@ branches:
   only:
     - master
 
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
 
 install:
   - npm install
   - npm install --save -g @angular/cli @angular-devkit/build-angular @angular/compiler @angular/compiler-cli --silent
 
 script:
-  - ng build --prod
+  - ng build 
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 
